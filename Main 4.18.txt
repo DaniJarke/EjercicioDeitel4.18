@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Cliente c1 = new Cliente();
+
+        int numerocuenta, saldomes, totalarticulos, creditoscliente, limitecredito;
+
+        System.out.println("Ingrese el número de cuenta del cliente: ");
+        numerocuenta = Integer.parseInt(sc.next());
+        c1.setNumerocuenta(numerocuenta);
+
+        System.out.println("Ingrese el saldo del cliente: ");
+        saldomes = Integer.parseInt(sc.next());
+        c1.setSaldomes(saldomes);
+
+        System.out.println("Ingrese el total de artículos del cliente: ");
+        totalarticulos = Integer.parseInt(sc.next());
+        c1.setTotalarticulos(totalarticulos);
+
+        System.out.println("Ingrese el número de créditos del cliente: ");
+        creditoscliente = Integer.parseInt(sc.next());
+        c1.setCreditoscliente(creditoscliente);
+
+        System.out.println("Ingrese el límite de créditos: ");
+        limitecredito = Integer.parseInt(sc.next());
+        c1.setLimitecredito(limitecredito);
+
+
+        if (c1.getTotal() <= limitecredito){
+            System.out.println("El cliente con número de cuenta "+c1.getNumerocuenta()+" tiene un total de "+c1.getBalance()+" créditos");
+        } else{
+            System.out.println("Su límite de creditos excedió.");
+        }
+
+    }
+}

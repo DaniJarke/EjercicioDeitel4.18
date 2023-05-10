@@ -1,0 +1,59 @@
+public class Cliente {
+
+    private int numerocuenta;
+    private int saldomes;
+    private int totalarticulos;
+    private int creditoscliente;
+    private int limitecredito;
+
+    public void setNumerocuenta(int numerocuenta) {
+        this.numerocuenta = numerocuenta;
+    }
+    public void setSaldomes(int saldomes) {
+        if (saldomes < 0 ){
+            saldomes = 0;
+        }
+        this.saldomes = saldomes;
+    }
+    public void setTotalarticulos(int totalarticulos) {
+        if (totalarticulos < 0){
+            totalarticulos = 0;
+        }
+        this.totalarticulos = totalarticulos;
+    }
+    public void setCreditoscliente(int creditoscliente) {
+        if (creditoscliente < 0){
+            creditoscliente = 0;
+        }
+        this.creditoscliente = creditoscliente;
+    }
+    public void setLimitecredito(int limitecredito) {
+        if (limitecredito < 0){
+            limitecredito = 0;
+        }
+        this.limitecredito = limitecredito;
+    }
+
+    public int getNumerocuenta() {
+        return numerocuenta;
+    }
+   public int getSaldomes() {
+        return saldomes;
+    }
+    public int getTotalarticulos() {
+        return totalarticulos;
+    }
+    public int getCreditoscliente() {
+        return creditoscliente;
+    }
+    public int getLimitecredito() {
+        return limitecredito;
+    }
+    public int getTotal(){
+        return saldomes+totalarticulos-creditoscliente;
+    }
+
+    public int getBalance(){
+        return getTotal()-limitecredito;
+    }
+}
